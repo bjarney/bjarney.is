@@ -9,9 +9,9 @@ module.exports = {
     extend: {
       colors: {
         psOrange: "#ff7b00",
-        psBlack: "#414141"
-      }
+        psBlack: "#414141",
+      },
     },
   },
   plugins: [],
-}
+};

@@ -1,64 +1,69 @@
 <html>
-<head>
-    <meta charset="utf-8">
-    <meta name="description" content="Bjarney 🌸🌹">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="description" content="Bjarney 🌸🌹" />
 
     <title>Bjarney 🌸🌹</title>
-    <link rel="icon" data-emoji="🍆" type="image/png"> <!-- See favicon script below -->
+    <link rel="icon" data-emoji="🍆" type="image/png" />
+    <!-- See favicon script below -->
 
     <style type="text/css">
-        body {
-            font-size: 22px;
-            font-family: 'Open Sans', sans-serif;
+      body {
+        font-size: 22px;
+        font-family: "Open Sans", sans-serif;
 
-            background: linear-gradient(135deg, rgba(255, 127, 127, 0.50), rgba(255, 127, 127, 0.8), #ff7f7f);
-        }
+        background: linear-gradient(
+          135deg,
+          rgba(255, 127, 127, 0.5),
+          rgba(255, 127, 127, 0.8),
+          #ff7f7f
+        );
+      }
 
-        h1, p {
-            color: #242424;
-            text-shadow: 1px 1px 1px rgba(0,0,0,0.2);
-        }
+      h1,
+      p {
+        color: #242424;
+        text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2);
+      }
 
-        #container {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            text-align: center;
+      #container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
 
-            height: 80%;
-            padding: 2em;
-        }
+        height: 80%;
+        padding: 2em;
+      }
     </style>
-</head>
+  </head>
 
-<body>
+  <body>
+    <div id="container">
+      <h1>Bjarney</h1>
+      <p>furnyburn</p>
+    </div>
 
-<div id="container">
-    <h1>Bjarney</h1>
-    <p>furnyburn</p>
-</div>
+    <!-- Emoji as favicon by Kristján Oddsson. https://koddsson.com/posts/emoji-favicon/ -->
+    <script>
+      const favicon = document.querySelector("link[rel=icon]");
 
-<!-- Emoji as favicon by Kristján Oddsson. https://koddsson.com/posts/emoji-favicon/ -->
-<script>
-  const favicon = document.querySelector("link[rel=icon]");
+      if (favicon) {
+        const emoji = favicon.getAttribute("data-emoji");
 
-  if (favicon) {
-    const emoji = favicon.getAttribute("data-emoji");
+        if (emoji) {
+          const canvas = document.createElement("canvas");
+          canvas.height = 64;
+          canvas.width = 64;
 
-    if (emoji) {
-      const canvas = document.createElement("canvas");
-      canvas.height = 64;
-      canvas.width = 64;
+          const ctx = canvas.getContext("2d");
+          ctx.font = "64px serif";
+          ctx.fillText(emoji, 0, 64);
 
-      const ctx = canvas.getContext("2d");
-      ctx.font = "64px serif";
-      ctx.fillText(emoji, 0, 64);
-
-      favicon.href = canvas.toDataURL();
-    }
-  }
-</script>
-
-</body>
+          favicon.href = canvas.toDataURL();
+        }
+      }
+    </script>
+  </body>
 </html>
